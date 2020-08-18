@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery - Init</title>
+    <style>
+        .container , .lista , .item{
+            padding: 10px;
+        }
+        .container{
+            width: 40%;
+        }
+        .lista{
+            list-style-type: none;
+        }
+        .botao{
+            background-color: springgreen;
+            color: black;
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .green{
+            color: springgreen;
+        }
+        .blue{
+           color: blue; 
+        }
+        .red{
+           color: red; 
+        }
+    </style>
+</head>
+<body>
+    <!-------------------------------- JQUERY 1 - CONCEITOS BASICOS ------------------------------->
+    <h1>jquery - init</h1>
+
+    <hr>
+
+    <h2>jquery - Consultas, add classes e atributos</h2>
+    <div>
+        container
+        <ul>
+            lista 1
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+        </ul>
+    </div>
+
+    <p>classes adicionadas via jquery</p> 
+    <p>cores de fundo adicionadas via jquery.</p> 
+    <p>arributo id "container-1" adicionado a apenas o primeiro div.container via jquery.</p>  
+    <p>todos os h1 até os h6 alinhados ao centro adicionados via jquery</p> 
+    <p>a terceira li que teve o conteudo "item 3" alterado para "item 3 editado via jquery</p> 
+    <p>item 5 foi criado via jquery</p> 
+
+    <hr>
+     <!-------------------------------- JQUERY 2 - EVENTOS ------------------------------->
+    <h2>Jquery - Eventos e adiconar Elementos</h2>
+   
+    <div class="container" id="container-2"></div>
+
+    <p>lista 1 foi clonado em uma variavel e teve seus ids tudo alterado para 2 antes de 
+    ser inserido no documento tudo via jquery
+    </p> 
+
+    <p>container 2 teve botoes adicionados a criar items para a lista</p> 
+
+    <p><strong>DECLARAÇÃO DE EVENTOS -</strong> $("seletor").on("nomeDoEvento","callback")</p>
+    <p>adicionar (item) em $("#container-2 .lista"):</p>
+    <p>(container)<strong>(itemBEFORE)</strong>(lista)<strong>(itemPREPEND)</strong>
+        (item)<strong>(itemAPPEND)</strong>(/lista)<strong>(itemAFTER)</strong>(/container)</p>
+
+    <hr>
+    <!-------------------------------- JQUERY 3 - ANIMAÇAO ------------------------------->
+    <h2>jquery - Animação com eventos</h2>
+    <div id="container-3">
+        container
+        <ul>
+            lista 3
+            <li>item Fade Out</li>
+            <li>item Fade In o primeiro elemento</li>
+            <li>item toggle green</li>
+            <li>item andar pra direita</li>
+            <li>recarregar essa lista</li>
+        </ul>
+    </div>
+    
+        <p>animacoes adicionadas em eventos de mouse e click em jquery</p> 
+
+    <!-------------------------------- JQUERY 4 - AJAX ------------------------------->
+
+    <h2>jquery - Ajax</h2>
+    <h3>.LOAD</h3>
+
+    <p>a lista de refresh dos icones da lista 3 ainda nao é ajax por nao ter sido
+        usada uma outra pagina para isso.
+    </p> 
+
+    <div id="container-4">
+        container 4
+        <div id="botoes-4">
+            <span class="botao atual">TEXTO NORMAL</span>
+            <span class="botao">TEXTO VERMELHO</span>
+            <span class="botao">TEXTO AZUL</span>
+        </div>
+        
+        <div id="content-4">
+            preto preto preto preto preto preto <br>
+            preto preto preto preto preto preto <br>
+            preto preto preto preto preto preto <br>
+            preto preto preto preto preto preto <br>
+            preto preto preto preto preto preto <br>
+            preto preto preto preto preto preto <br>
+            preto preto preto preto preto preto <br>
+        </div>    
+        
+    </div>
+        
+    <h3>GET</h3>
+
+        <p>ao clicar no botao ele pega da outra pagina o elemento content do outro conteudo e o
+         add aqui em uma parte sem carregar a pagina, isso é AJAX via JQUERY</p> 
+
+        <p> nessa tabela apenas se usou o .load() do AJAX sendo requisitado apenas por um XMR - 
+            carregando HTML </p> 
+
+        <div id="container-5">
+            container 5
+            <div id="botoes-5">
+                <h5 class="botao">violet</h5>
+                <h5 class="botao">indigo</h5>
+                <h5 class="botao">blue</h5>
+                <h5 class="botao">green</h5>
+                <h5 class="botao">yellow</h5>
+                <h5 class="botao">orange</h5>
+                <h5 class="botao">red</h5>
+            </div>
+            
+            <div id="container-square"></div>  
+
+        </div>   
+ 
+        <p> aqui o mesmo procedimento foi feito mas usando GET </p> 
+        <p> ao vc clicar em um botao, o text dele é eviado via parametro GET
+            e depois esse parametro é adicionado a uma variavel no arquivo ajax.php
+            que depois envia um XHR como response para essa pagina
+        </p> 
+        <p> o response no caso foi um echo na pagina ajax.php que rendezia estrutura HTML se 
+            existir na pagina php se tiver, e claro o echo da cor antes do quadrado ser 
+            renderizado.
+        </p> 
+
+    <h3>POST COM JSON</h3>
+
+    <div id="container-6" class="container">
+        <div id="formulario-6">
+
+            formulario 6  <br>
+            <input type="hidden" name="id"><br>
+            <input type="text" name="nome" placeholder="insira seu nome"><br>
+            <input type="text" name="idade" placeholder="insira sua idade"><br>
+            <input type="text" name="cidade" placeholder="insira sua cidade">
+            <br><br>
+            <span  class="botao">Cadastrar</span>
+
+        </div>
+        <p id="status" class="red" style="padding: 15px; text-align:center; "></p>
+
+        <span class="botao">JSON-cadastrados</span><br>
+
+        <div id="cadastrados" style="padding: 15px"></div> 
+    
+    </div>   
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
